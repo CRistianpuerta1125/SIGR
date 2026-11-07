@@ -1,0 +1,15 @@
+{% extends "base.html" %}{% block t %}Menú{% endblock %}{% block c %}
+<h1>Menú digital</h1>
+<table><tr><th>Plato</th><th>Categoría</th><th>Precio</th><th></th></tr>
+{% for p in menu %}<tr><td>{{ p.nombre }}</td><td>{{ p.categoria }}</td>
+<td>$ {{ "{:,}".format(p.precio) }}</td>
+<td><a class="btn" href="/menu/eliminar/{{ p.id }}">Eliminar</a></td></tr>{% endfor %}
+</table>
+<h3 style="margin-top:20px">Agregar plato</h3>
+<form method="post" action="/menu/agregar">
+ <input name="nombre" placeholder="Nombre">
+ <input name="categoria" placeholder="Categoría">
+ <input name="precio" type="number" placeholder="Precio">
+ <button type="submit">Agregar</button>
+</form>
+{% endblock %}

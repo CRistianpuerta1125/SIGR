@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block t %}Caja{% endblock %}{% block c %}
+<h1>Cierre de caja — {{ fecha }}</h1>
+<p>Pedidos entregados: <b>{{ cantidad }}</b></p>
+<p>Total vendido: <b>$ {{ "{:,}".format(total) }}</b></p>
+<table><tr><th>#</th><th>Plato</th><th>Hora</th></tr>
+{% for p in entregados %}<tr><td>{{ p.id }}</td><td>{{ p.plato }}</td><td>{{ p.hora }}</td></tr>{% endfor %}
+</table>
+{% endblock %}

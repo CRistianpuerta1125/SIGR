@@ -1,0 +1,13 @@
+{% extends "base.html" %}{% block t %}Pedidos{% endblock %}{% block c %}
+<h1>Pedidos en tiempo real</h1>
+<table><tr><th>#</th><th>Plato</th><th>Hora</th><th>Estado</th><th></th></tr>
+{% for p in pedidos %}<tr><td>{{ p.id }}</td><td>{{ p.plato }}</td><td>{{ p.hora }}</td>
+<td><span class="tag">{{ p.estado }}</span></td>
+<td>{% if p.estado != "Entregado" %}<a class="btn" href="/pedidos/listo/{{ p.id }}">Marcar entregado</a>{% endif %}</td></tr>{% endfor %}
+</table>
+<h3 style="margin-top:20px">Nuevo pedido</h3>
+<form method="post" action="/pedidos/crear">
+ <select name="plato">{% for m in menu %}<option>{{ m.nombre }}</option>{% endfor %}</select>
+ <button type="submit">Registrar</button>
+</form>
+{% endblock %}

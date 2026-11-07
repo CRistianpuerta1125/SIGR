@@ -1,0 +1,10 @@
+{% extends "base.html" %}{% block t %}Panel{% endblock %}{% block c %}
+<h1>Panel principal</h1>
+<p>Bienvenido. Su rol es: <span class="tag">{{ rol }}</span></p>
+<ul>
+ <li><a href="/menu">Gestionar menú</a></li>
+ <li><a href="/pedidos">Registrar y seguir pedidos</a></li>
+ <li><a href="/reservas">Gestionar reservas</a></li>
+ <li><a href="/caja">Cierre de caja y reportes</a></li>
+</ul>
+{% endblock %}

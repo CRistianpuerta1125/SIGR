@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% block t %}Ingreso{% endblock %}{% block c %}
+<h1>Sistema Integral de Gestión de Restaurante</h1>
+<p>Inicie sesión para continuar.</p>
+<form method="post">
+ <input name="usuario" placeholder="Usuario"><br>
+ <input name="clave" type="password" placeholder="Contraseña"><br>
+ <button type="submit">Ingresar</button>
+</form>
+<p style="font-size:12px;color:#6b7785;margin-top:16px">
+ Usuarios de prueba: admin/admin123 · mesero/mesero123 · cliente/cliente123</p>
+{% endblock %}
